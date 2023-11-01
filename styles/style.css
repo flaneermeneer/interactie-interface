@@ -44,7 +44,17 @@ img {
 h1 {
   color:var(--color-headings);
 }
-
+button{
+  background: transparent;
+  border-style: none;
+}
+section{
+  display: grid;
+  justify-items: center;
+}
+.start-img-gif{
+  visibility: hidden;
+}
 /* ... */
 
 
