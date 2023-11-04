@@ -9,8 +9,12 @@
 
 body {
   margin:0;
-}
+  background-color: hsl(150deg 50% 50%);
 
+}
+.btn:hover{
+  cursor: url('../images/crosshair.png'), auto;
+}
 button:not([disabled]) {
   cursor:pointer;
 }
@@ -18,8 +22,10 @@ button:not([disabled]) {
 img {
   max-width:100%;
 }
-
-
+button:hover{
+opacity: 50%;
+  
+}
 
 
 
@@ -43,18 +49,24 @@ img {
 
 h1 {
   color:var(--color-headings);
-}
-button{
-  background: transparent;
-  border-style: none;
+  display: grid;
+  justify-content: center;
 }
 section{
   display: grid;
+  justify-content: center;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
   justify-items: center;
+
 }
-.start-img-gif{
-  visibility: hidden;
+article:nth-of-type(2){
+  width: 25em;
 }
 /* ... */
 
+button{
+  background-color: transparent;
+  border: none;
+}
 
