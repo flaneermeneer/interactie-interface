@@ -12,9 +12,12 @@ var caco  = document.querySelector(".caco")
 var btn  = document.querySelector(".btn")
 
 const omschrijving = [
-    '"They float in the air, belch ball-lightning, and boast one Hell of a big mouth."<br><br>' +
+    '"They float in the air, belch ball-lightning, and boast one Hell of a big mouth."' +
+    "<br>"+
      "You are toast if you get too close to these monstrosities. ― Doom & Doom II manual description <br><br>" +
+     "<br>"+
      "Cacodemons are common demons encountered in all classic Doom games: Doom, Doom II, and Final Doom. They are one of the most common monsters the player will encounter, behind the Imp and the Demon/Spectre." +
+     "<br>"+
      "Cacodemons are red monsters with large spherical bodies crowned with horns, that float slowly through the air. They have a single green eye over a large mouth which is persistently twisted into a Cheshire cat-like grin, showing a series of nasty teeth and a bluish interior. If you see their sprite used when you look at it from behind, you can see it appears to have a female genitalia and an anus. However, these two holes in the back of the spite may not be genitals, but holes in the original clay models of the Cacodemon, where pegs may have been inserted for various floating camera angle shots. The Pain Elemental partially re-uses some parts of the Cacodemon sprite, recolored, and it has the same holes as well. This means either all Pain Elementals and Cacodemons are females, or they are simply just holes in the original clay models that were never filled in, either by accident or on purpose. So far, there is no official explanation for these holes, and the same goes for the hole near the Imp's rear end when it dies.",
     'hans is lekker',
     'lekker poepen',
@@ -43,7 +46,7 @@ const titel = [
 function updateImage() {
     caco.src = images[currentIndex];
     caco.alt = `Image ${currentIndex + 1}`;
-    omschrijvingElement.textContent = omschrijving[currentIndex];
+    omschrijvingElement.textContent = omschrijving [currentIndex];
     titelElement.textContent =titel[currentIndex];
   }
   
