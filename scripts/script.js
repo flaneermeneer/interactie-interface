@@ -1,28 +1,40 @@
 // JavaScript Document
 console.log("Those that tasted the bite of his sword.. named him.. The Doomslayer");
 const images = ['./images/cacodemon.png', './images/Cacodemon_64_sprite.png' ,  './images/doom3caco.png',  './images/doom4caco.png',  './images/doom5caco.png'];
-const titelElement = document.getElementById('gametitel');
-const omschrijvingElement = document.getElementById('omschrijving');
+var titelElement = document.querySelector('h4');
+var omschrijvingElement = document.querySelector('p');
 let currentIndex = 0;
 
 var gunsound1 = new Audio('sounds/doom1gun.mp3')
 var deathsound1 = new Audio('sounds/dscacdth.wav')
 
-var caco  = document.querySelector(".caco")
-var btn  = document.querySelector(".btn")
+var caco  = document.querySelector("img")
+var btn  = document.querySelector("button")
 
 const omschrijving = [
-    '"They float in the air, belch ball-lightning, and boast one Hell of a big mouth."' +
-    "<br>"+
-     "You are toast if you get too close to these monstrosities. ― Doom & Doom II manual description <br><br>" +
-     "<br>"+
+    '"They float in the air, belch ball-lightning, and boast one Hell of a big mouth. "' +
+     "You are toast if you get too close to these monstrosities. ― Doom & Doom II manual description " +
      "Cacodemons are common demons encountered in all classic Doom games: Doom, Doom II, and Final Doom. They are one of the most common monsters the player will encounter, behind the Imp and the Demon/Spectre." +
-     "<br>"+
-     "Cacodemons are red monsters with large spherical bodies crowned with horns, that float slowly through the air. They have a single green eye over a large mouth which is persistently twisted into a Cheshire cat-like grin, showing a series of nasty teeth and a bluish interior. If you see their sprite used when you look at it from behind, you can see it appears to have a female genitalia and an anus. However, these two holes in the back of the spite may not be genitals, but holes in the original clay models of the Cacodemon, where pegs may have been inserted for various floating camera angle shots. The Pain Elemental partially re-uses some parts of the Cacodemon sprite, recolored, and it has the same holes as well. This means either all Pain Elementals and Cacodemons are females, or they are simply just holes in the original clay models that were never filled in, either by accident or on purpose. So far, there is no official explanation for these holes, and the same goes for the hole near the Imp's rear end when it dies.",
-    'hans is lekker',
-    'lekker poepen',
-    'Description for Image 4',
-    'Description for Image 5'
+     "Cacodemons are red monsters with large spherical bodies crowned with horns, that float slowly through the air. They have a single green eye over a large mouth which is persistently twisted into a Cheshire cat-like grin, showing a series of nasty teeth and a bluish interior.",
+    
+     'The Cacodemons of Doom 64 are resurrected carcasses of those from Doom 1, resurrected by the Mother Demon. They are made from systematically altered dead carnage remade back into corrupted living tissue. The mutations were devastating. The demons have returned stronger and more vicious than before. ' +
+     'They float in the air, belch ball-lightning, and have one horrendously big mouth. If you get too close to one of these monstrosities, you are toast. '+
+     'It underwent major mutations, becoming beige brown, with a single yellow-green eye, and gaining two arms with broken chains attached, and a rather terrifying face. It resembles the original pain elemental(enemy) from Doom II. ',
+
+
+    'The Cacodemon in Doom 3 has a very distinct appearance from its classic iteration. Its overall body shape is a lot less spherical, instead taking the appearance of a floating taupe reptilian-like head, with multiple green eyes, a brain clearly visible on the top of its cranium, and long thin tentacles hanging from the bottom of its body. '+
+     'When alerted by the player, they make a sudden throaty growl, and are characterized by a mysterious whirring sound they make when they are present. '+
+    'The Doom 3 version of the Cacodemon moves through the air faster than its previous incarnations although it is still pretty slow relative to the player. '+
+    'Like the original, it fires an energy ball in a straight line. This projectile is more missile based instead of being a simple purple/red plasma ball, and sometimes it fires it in a somewhat wild direction, deliberately "missing" their target, which can confuse players. '+
+    'Up close, the Cacodemon can bite the player, although the lag for them to initiate such attack takes 2-3 seconds, which leaves them equally vulnerable in the process. ',
+
+    'The Cacodemon appearance is very similar to its appearance in the original Doom, their most notable features being its single green eye and gaping maw filled with sharp, yellow teeth that takes up the majority of their bodies. The top area of the Cacodemon is covered in red armor plates with spikes similar to the ones the Pinky possesses. Its fleshy underside is unarmored and displays a bulge, which is possibly an extension of the stomach to hold more food in it. The Cacodemon also has four stunted limbs that are now useless. '+
+    'Cacodemons are monstrous psionic demons driven by the desire to feed. They display limited intelligence, but are so often sent into the fray as their natural size and abilities make them an intimidating weapon for the demon-horde. '+
+    'At distances, the Cacodemon will fire powerful yet slow moving energy blasts. When close enough, the Cacodemon will bite the player, dealing incredible damage. The projectile it hurls can impair the vision of the player, allowing it to get close enough to bite the player. ',
+   
+
+    'For the most part, the Cacodemon remains unchanged from its depiction in DOOM, retaining its shriveled legs and misshapen underbelly. However, its back spines and teeth have changed from their dirty yellow in the previous game to a more clean white color, and its body is a lighter shade of red. Its green eye now has a pupil, and it now bleeds blue blood, similar to its original appearance in the classic Doom games. '+
+    'The Cacodemon will drift quietly towards the player, lobbing balls of purple plasma at him as it attempts to close distance. Occasionally, the Cacodemon will launch three plasma balls in quick succession, which can slow down the player greatly if they all hit. When in close range, the Cacodemon will bite the player, dealing an alarmingly high amount of damage. The Cacodemon is also surprisingly bulky, capable of taking hefty amounts of damage without a flinch. '
   ];
 
 const titel = [
@@ -41,11 +53,37 @@ const titel = [
     
 
 // })
+var verborgen = document.querySelector("section:nth-of-type(2)");
+var vgdstap = document.querySelector("section:nth-of-type(1)");
 
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Enter" || event.keyCode === 13){
+      // Toggle visibility
+      if (verborgen.style.display === "none", vgdstap.style.display === "none") {
+          verborgen.style.display = "grid";
+          vgdstap.style.display = "none";
+      } else {
+          verborgen.style.display = "grid";
+          vgdstap.style.display = "none";
+      }
+     
+  }
+});
+
+
+
+// verborgen.addEventListener("click", function () {
+//   // Toggle visibility
+//   if (verborgen.style.visibility === "hidden") {
+//       verborgen.style.visibility = "visible";
+//   } else {
+//       verborgen.style.visibility = "hidden";
+//   }
+// });
 
 function updateImage() {
     caco.src = images[currentIndex];
-    caco.alt = `Image ${currentIndex + 1}`;
+    caco.alt = titel[currentIndex];
     omschrijvingElement.textContent = omschrijving [currentIndex];
     titelElement.textContent =titel[currentIndex];
   }

@@ -5,7 +5,13 @@
 /* naar een idee van Jen Simmons */
 *, *::after, *::before {
   box-sizing:border-box;  
+  
 }
+@font-face {
+  font-family: "doom";
+	src: url("../Doom.woff") format("woff");
+}
+
 
 body {
   margin:0;
@@ -22,7 +28,39 @@ button:not([disabled]) {
 img {
   width: 40em;
     height: 42em;
+ 
+ 
+ 
 }
+ @keyframes button {
+
+  0% {
+    transform: translateZ(0%)
+  }
+
+  25% {
+
+    transform: translateX(50%);
+
+  }
+  50% {
+
+    transform: translateX(100%);
+
+  }
+  75% {
+
+    transform: translateX(50%);
+
+  }
+  100% {
+
+    transform: translateX(0%);
+
+  }
+  
+} 
+
 button:hover{
 opacity: 50%;
   
@@ -36,8 +74,9 @@ opacity: 50%;
 
 :root {
   --color-headings:crimson;
-  --background-color: #6C4B36;
+  --background-color: #39393987;
   --border-color: #4E3B35;
+  --color:white;
 
   /* ... */
 
@@ -55,18 +94,38 @@ h1 {
   color:var(--color-headings);
   display: grid;
   justify-content: center;
+  padding: 2em 0em 0em 0em;
+  font-family: "doom";
+  font-weight: 100;
+  font-size:6em ;
+}
+h2{
+  display: flex;
+  justify-content: center;
 }
 section{
   display: grid;
   justify-content: center;
   grid-template-columns: 50% 50%;
   justify-items: center;
+  padding: 10em;
 
 }
+section:nth-of-type(1){
+  color: var(--color);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+section:nth-of-type(2){
+  display: none;
+}
+
 article:nth-of-type(2){
   width: 25em;
   background-color: var(--background-color);
   border-color: var(--border-color);
+  color: var(--color);
   border-width: thick;
   padding: 2em;
 }
@@ -76,4 +135,3 @@ button{
   background-color: transparent;
   border: none;
 }
-
