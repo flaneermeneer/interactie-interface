@@ -6,6 +6,8 @@ var titelElement = document.querySelector('h4');
 var omschrijvingElement = document.querySelector('p');
 let currentIndex = 0;
 
+var body = document.querySelector("body")
+
 var gunsound1 = new Audio('sounds/doom1gun.mp3')
 var deathsound1 = new Audio('sounds/dscacdth.wav')
 
@@ -36,8 +38,7 @@ const omschrijving = [
     'The Cacodemon in Doom 3 has a very distinct appearance from its classic iteration. Its overall body shape is a lot less spherical, instead taking the appearance of a floating taupe reptilian-like head, with multiple green eyes, a brain clearly visible on the top of its cranium, and long thin tentacles hanging from the bottom of its body. '+
      ' When alerted by the player, they make a sudden throaty growl, and are characterized by a mysterious whirring sound they make when they are present. '+
     ' The Doom 3 version of the Cacodemon moves through the air faster than its previous incarnations although it is still pretty slow relative to the player. '+
-    ' Like the original, it fires an energy ball in a straight line. This projectile is more missile based instead of being a simple purple/red plasma ball, and sometimes it fires it in a somewhat wild direction, deliberately "missing" their target, which can confuse players. '+
-    ' Up close, the Cacodemon can bite the player, although the lag for them to initiate such attack takes 2-3 seconds, which leaves them equally vulnerable in the process. ',
+    ' Like the original, it fires an energy ball in a straight line. This projectile is more missile based instead of being a simple purple/red plasma ball, and sometimes it fires it in a somewhat wild direction, deliberately "missing" their target, which can confuse players. ',
 
     'The Cacodemon appearance is very similar to its appearance in the original Doom, their most notable features being its single green eye and gaping maw filled with sharp, yellow teeth that takes up the majority of their bodies. The top area of the Cacodemon is covered in red armor plates with spikes similar to the ones the Pinky possesses. Its fleshy underside is unarmored and displays a bulge, which is possibly an extension of the stomach to hold more food in it. '+
     ' Cacodemons are monstrous psionic demons driven by the desire to feed. They display limited intelligence, but are so often sent into the fray as their natural size and abilities make them an intimidating weapon for the demon-horde. '+
@@ -51,7 +52,7 @@ const omschrijving = [
 const titel = [
     'DooM 1993',
     'DooM 64 1997',
-    'DooM 2004',
+    'DooM 3 2004',
     'DooM 2016',
     'Doom Eternal 2020'
   ];
@@ -61,7 +62,7 @@ const titel = [
 
 
 document.addEventListener("keydown", function (event) {
-  if (event.key === "Enter" || event.keyCode === 13){
+  if (event.key === "Enter"  || event.keyCode === 13){
       // Toggle visibility
       if (verborgen.style.display === "none", vgdstap.style.display === "none",  verborgenbutton.style.display === "none") {
           verborgen.style.display = "grid";
@@ -75,6 +76,19 @@ document.addEventListener("keydown", function (event) {
       }
      
   }
+});
+body.addEventListener('touchstart', () => {
+  
+  if (verborgen.style.display === "none", vgdstap.style.display === "none",  verborgenbutton.style.display === "none") {
+    verborgen.style.display = "grid";
+    verborgenbutton.style.display = "none";
+    vgdstap.style.display = "none";
+} else {
+    verborgen.style.display = "grid";
+    vgdstap.style.display = "none";
+    verborgenbutton.style.display = "flex";
+    
+}
 });
 
 
