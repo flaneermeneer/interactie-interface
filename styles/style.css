@@ -3,70 +3,61 @@
 /**************/
 
 /* naar een idee van Jen Simmons */
-*, *::after, *::before {
-  box-sizing:border-box;  
-  
-}
-@font-face {
-  font-family: "doom";
-	src: url("../Doom.woff") format("woff");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 
 }
-@font-face{
+
+@font-face {
+  font-family: "doom";
+  src: url("../Doom.woff") format("woff");
+}
+
+@font-face {
   font-family: "pixel";
   src: url("../PixelGameFont.woff") format("woff");
 }
 
 body {
-  margin:0;
+  margin: 0;
   background-image: url('../images/doombackground.png');
-
 }
 
 button:not([disabled]) {
-  cursor:pointer;
+  cursor: pointer;
 }
 
+
+
 img {
-  width: 40em;
-    height: 42em;
- 
- 
- 
-}
-h4{
-  font-family: "doom";
-  font-size: 3em;
-  font-weight: 100;
-  margin:0;
-}
-button:nth-of-type(1){
   animation: zweef 5s ease-out infinite normal;
 }
-@keyframes zweef{
-  0%{
+
+@keyframes zweef {
+  0% {
     translate: 0 1em;
   }
-  50%{
+
+  50% {
     translate: 0 2em;
   }
-  100%{
+
+  100% {
     translate: 0 1em;
   }
 }
-button:nth-of-type(1):hover{
-opacity: 50%;
+
+img:first-of-type:hover {
+  opacity: 50%;
   cursor: url('../images/crosshair.png'), auto;
   scale: 1.1;
   transition: scale 0.1s linear;
-  
 }
-button:nth-of-type(2):hover,
-button:nth-of-type(3):hover,
-button:nth-of-type(4):hover,
-button:nth-of-type(5):hover,
-button:nth-of-type(6):hover{
-  background-color: var(--border-color);
+
+section:nth-of-type(3) button:hover {
+  background-color: var(--hover-color);
   scale: 1.1;
   transition: scale 0.1s linear;
 }
@@ -78,16 +69,17 @@ button:nth-of-type(6):hover{
 /*********************/
 
 :root {
-  --color-headings:crimson;
+  --color-headings: crimson;
   --background-color: #39393987;
-  --border-color: #4E3B35;
-  --color:white;
-  --font-header:"doom";
-  --font-text:"pixel";
+  --button-background-color: #1d0e0e;
+  --hover-color: #352020;
+  --border-color: white;
+  --color: white;
+  --font-header: "doom";
+  --font-text: "pixel";
+
   /* ... */
-
 }
-
 
 
 
@@ -96,22 +88,42 @@ button:nth-of-type(6):hover{
 /* ALGEMENE STYLING */
 /********************/
 
+p {
+  font-family: "pixel";
+}
+
+img {
+  width: 40em;
+  height: 42em;
+}
+
 h1 {
-  color:var(--color-headings);
+  color: var(--color-headings);
   display: grid;
   justify-content: center;
   margin: 0.5em 0em 0em 0em;
   font-family: var(--font-header);
   font-weight: 100;
-  font-size:6em ;
+  font-size: 6em;
 }
-h2{
+
+h2 {
   display: flex;
   justify-content: center;
   text-align: center;
   padding: 10em;
+  font-family: "pixel";
 }
-section{
+
+h4 {
+  font-family: "doom";
+  font-size: 3em;
+  font-weight: 100;
+  margin: 0;
+}
+
+/* section 1 en meer */
+section {
   display: grid;
   justify-content: center;
   grid-template-columns: 50% 50%;
@@ -119,24 +131,56 @@ section{
   padding: 1em;
 
 }
-article:nth-of-type(3) button{
-  padding: 2em 2em ;
+
+section>button {
+  display: flex;
+  border: 5em;
 }
-section:nth-of-type(1){
+
+section:first-of-type button {
+
+  padding: 2em;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-left: 39%;
+  color: var(--color);
+  border-color: var(--color-headings);
+  font-family: var(--font-text);
+  background-color: var(--color-headings);
+  border: 0.5em solid;
+  text-align: center;
+}
+
+section:first-of-type button:hover {
+  background-color: var(--hover-color);
+  scale: 1.1;
+  transition: scale 0.1s linear;
+}
+
+article:nth-of-type(1) button {
+  background-color: transparent;
+  border: none;
+}
+
+section:nth-of-type(1) {
   color: var(--color);
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
-section:nth-of-type(2),
-section:nth-of-type(3){
+
+/* section 2 en meer */
+section:nth-of-type(2) > h2,h3:first-of-type{
   display: none;
 }
-section:nth-of-type(3){
-  display: none;
-  margin-top: 2em;
+section:nth-of-type(2):hover {
+  transition: ease-in 3s linear;
 }
-article:nth-of-type(2){
+
+article:nth-of-type(2) {
   width: 25em;
   background-color: var(--background-color);
   border-color: var(--border-color);
@@ -144,42 +188,36 @@ article:nth-of-type(2){
   border-width: thick;
   padding: 2em;
 }
-/* ... */
 
-article:first-of-type button{
-  background-color: transparent;
-  border: none;
-}
-section > button{
-  display: flex;
-  border:5em;
+section:nth-of-type(2),
+section:nth-of-type(3) {
+  display: none;
 }
 
-section:nth-of-type(3) button
-{
-padding: 2em 3em;
-margin: 2em;
-color: var(--color);
-border-color: var(--color-headings);
-font-family: var(--font-text);
-background-color: var(--color-headings);
-border: 0.5em solid;
+/* section 3 en meer */
+section:nth-of-type(3)>h2 {
+  display: none;
 }
- 
-section:nth-of-type(3) button:nth-of-type(1)
-{
-display: none;
+
+section:nth-of-type(3) {
+  display: none;
+  margin-top: 2em;
 }
-p{
-  font-family: "pixel";
+
+section:nth-of-type(3) button {
+  padding: 2em 3em;
+  margin: 2em;
+  color: var(--color);
+  border-color: var(--color-headings);
+  font-family: var(--font-text);
+  background-color: var(--color-headings);
+  border: 0.5em solid;
 }
-@media (max-width:1000px) {
-	section {
 
-		display: grid;
-		grid-template-columns: 90%;
-	
+article:nth-of-type(3) button {
+  padding: 2em 2em;
+}
 
-
-	}
+section:nth-of-type(3) button:nth-of-type(1) {
+  display: none;
 }
